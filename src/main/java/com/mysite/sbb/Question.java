@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -20,5 +21,6 @@ public class Question {
     @Column(columnDefinition = "TEXT")
     private String content; //내용
 
-    private LocalDateTime createDate; //작성 일시
+    @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
+    private List<Answer> anserList; //작성 일시, create_date라는 열의 이름을 만듦
 }

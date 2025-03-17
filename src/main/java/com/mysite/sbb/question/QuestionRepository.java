@@ -1,14 +1,13 @@
-package com.mysite.sbb.repository;
+package com.mysite.sbb.question;
 
-import com.mysite.sbb.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+//import java.util.List;
 
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
 
-    Question findBySubject(String subject);
+//    Question findBySubject(String subject);
     Question findBySubjectAndContent(String subject, String content);
     /// test JPA2
-    List<Question> findBySubjectLike(String subject);
+//    List<Question> findBySubjectLike(String subject);
 }
